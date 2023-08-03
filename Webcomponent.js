@@ -17,6 +17,7 @@ var ajaxCall = (key, url, prompt) => {
           resolve({ response, status, xhr });
         },
         error: function (xhr, status, error) {
+          console.log(error)
           const err = new Error('xhr error');
           err.status = xhr.status;
           reject(err);
