@@ -1,7 +1,7 @@
 var ajaxCall = (type, source, message) => {
     return new Promise((resolve, reject) => {
       $.ajax({
-        url: "https://localhost:8000/events",
+        url: "http://localhost:8000/events",
         type: "POST",
         dataType: "json",
         data: JSON.stringify({
