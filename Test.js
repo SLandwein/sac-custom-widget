@@ -27,29 +27,29 @@ var ajaxPostCall = (type, source, message) => {
     });
   };
 
-var ajaxGetCall = () => {
-  return new Promise((resolve, reject) => {
-    $.ajax({
-      url: "http://localhost:8000/test",
-      type: "GET",
-      dataType: "json",
-      headers: {
-        "Content-Type": "application/json",
-        "accept": "application/json"
-      },
-      crossDomain: true,
-      success: function (response, status, xhr) {
-        resolve({ response, status, xhr });
-      },
-      error: function (xhr, status, error) {
-        console.log(error)
-        const err = new Error('xhr error');
-        err.status = xhr.status;
-        reject(err);
-      },
-    });
-  });
-};
+// var ajaxGetCall = () => {
+//   return new Promise((resolve, reject) => {
+//     $.ajax({
+//       url: "http://localhost:8000/test",
+//       type: "GET",
+//       dataType: "json",
+//       headers: {
+//         "Content-Type": "application/json",
+//         "accept": "application/json"
+//       },
+//       crossDomain: true,
+//       success: function (response, status, xhr) {
+//         resolve({ response, status, xhr });
+//       },
+//       error: function (xhr, status, error) {
+//         console.log(error)
+//         const err = new Error('xhr error');
+//         err.status = xhr.status;
+//         reject(err);
+//       },
+//     });
+//   });
+// };
   
   (function () {
     const template = document.createElement("template");
@@ -65,11 +65,11 @@ var ajaxGetCall = () => {
         console.log(response);
         return response;
       }
-      async get() {
-        const { response } = await ajaxGetCall(type, source, message);
-        console.log(response);
-        return response;
-      }
+      // async get() {
+      //   const { response } = await ajaxGetCall(type, source, message);
+      //   console.log(response);
+      //   return response;
+      // }
     }
     customElements.define("custom-widget2", MainWebComponent2);
   })();
