@@ -35,12 +35,12 @@ var ajaxPostCall = (type, source, message) => {
         <div id="root" style="width: 100%; height: 100%;">
         </div>
       `;
-    class MainWebComponent2 extends HTMLElement {
+    class MainWebComponent extends HTMLElement {
       async post(type, source, message) {
         const { response } = await ajaxPostCall(type, source, message);
         console.log(response);
         return response;
       }
     }
-    customElements.define("custom-widget2", MainWebComponent2);
+    customElements.define("custom-widget", MainWebComponent);
   })();
